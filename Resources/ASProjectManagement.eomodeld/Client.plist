@@ -1,0 +1,32 @@
+{
+    attributes = (
+        {columnName = clientcontact; name = clientContact; prototypeName = longText; }, 
+        {columnName = clientname; name = clientName; prototypeName = longText; }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = isactive; name = isActive; prototypeName = intBoolean; }, 
+        {allowsNull = Y; columnName = personid; name = personID; prototypeName = id; }
+    ); 
+    attributesUsedForLocking = (clientContact, clientName, id, isActive, personID); 
+    className = "com.as.model.Client"; 
+    classProperties = (accountExec, clientContact, clientName, isActive, projects); 
+    externalName = client; 
+    fetchSpecificationDictionary = {}; 
+    name = Client; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Person; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = personID; }); 
+            name = accountExec; 
+        }, 
+        {
+            destination = Project; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = clientID; sourceAttribute = id; }); 
+            name = projects; 
+        }
+    ); 
+}

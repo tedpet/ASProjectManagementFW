@@ -1,0 +1,19 @@
+{
+    activePeople = {
+        class = EOFetchSpecification; 
+        entityName = Person; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = isActive; 
+            selectorName = "isEqualTo:"; 
+            value = {class = NSNumber; value = 1; }; 
+        }; 
+        sortOrderings = ({class = EOSortOrdering; key = lastName; selectorName = compareAscending; }); 
+        userInfo = {
+            "_EntityModeler" = {
+                documentation = "Fetchspec to return active people, sorted by last name smallest to largest."; 
+            }; 
+        }; 
+    }; 
+}

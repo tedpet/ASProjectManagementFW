@@ -1,0 +1,63 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = emailaddress; 
+            name = emailAddress; 
+            prototypeName = longText; 
+        }, 
+        {columnName = firstname; name = firstName; prototypeName = longText; }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            columnName = isaccountexec; 
+            name = isAccountExec; 
+            prototypeName = intBoolean; 
+        }, 
+        {columnName = isactive; name = isActive; prototypeName = intBoolean; }, 
+        {columnName = lastname; name = lastName; prototypeName = longText; }, 
+        {columnName = loginname; name = loginName; prototypeName = longText; }, 
+        {columnName = password; name = password; prototypeName = longText; }
+    ); 
+    attributesUsedForLocking = (
+        emailAddress, 
+        firstName, 
+        id, 
+        isAccountExec, 
+        isActive, 
+        lastName, 
+        loginName, 
+        password
+    ); 
+    className = "com.as.model.Person"; 
+    classProperties = (
+        clients, 
+        emailAddress, 
+        firstName, 
+        isAccountExec, 
+        isActive, 
+        lastName, 
+        loginName, 
+        password, 
+        projectSteps
+    ); 
+    externalName = person; 
+    name = Person; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Client; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = personID; sourceAttribute = id; }); 
+            name = clients; 
+        }, 
+        {
+            destination = ProjectStep; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = personID; sourceAttribute = id; }); 
+            name = projectSteps; 
+        }
+    ); 
+    userInfo = {ERXAuditKeys = (firstName); }; 
+}

@@ -1,0 +1,43 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = clientid; name = clientID; prototypeName = id; }, 
+        {columnName = complete; name = complete; prototypeName = intBoolean; }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            columnName = jobdescription; 
+            name = jobDescription; 
+            prototypeName = longText; 
+        }, 
+        {columnName = jobnumber; name = jobNumber; prototypeName = longText; }, 
+        {
+            columnName = projectduedate; 
+            name = projectDueDate; 
+            prototypeName = dateTime; 
+        }
+    ); 
+    attributesUsedForLocking = (clientID, complete, id, jobDescription, jobNumber); 
+    className = "com.as.model.Project"; 
+    classProperties = (client, complete, jobDescription, jobNumber, projectDueDate, projectSteps); 
+    externalName = project; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = Project; }; 
+    name = Project; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Client; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = clientID; }); 
+            name = client; 
+        }, 
+        {
+            destination = ProjectStep; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = projectID; sourceAttribute = id; }); 
+            name = projectSteps; 
+        }
+    ); 
+}

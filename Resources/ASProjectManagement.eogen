@@ -1,0 +1,12 @@
+ -destination Sources \
+ -extension java \
+ -java \
+ -javaTemplate _ASEntity.java \
+ -model Resources/ASProjectManagement.eomodeld \
+ -packagedirs \
+ -subclassDestination Sources \
+ -subclassJavaTemplate ASEntity.java \
+ -templatedir Resources/EOGenTemp \
+ -verbose \
+ -loadModelGroup \
+ -superclassPackage gen

@@ -1,0 +1,18 @@
+
+#      AgencySacks Project Manager
+
+
+# Connection Dictionary
+ dbConnectURLGLOBAL=jdbc:postgresql://localhost/projects?capitalizeTypenames=true&zeroDateTimeBehavior=convertToNull
+ dbConnectUserGLOBAL=admin
+ dbConnectPasswordGLOBAL=4004
+ dbConnectPluginGLOBAL=PostgresqlPlugIn
+ dbConnectDriverGLOBAL=org.postgresql.Driver
+ dbEOPrototypesEntityGLOBAL=EOJDBCPostgresqlPrototypes
+
+# Migrations
+er.migration.migrateAtStartup=true
+er.migration.createTablesIfNecessary=true
+er.migration.modelNames=ASProjectManagement
+
+ASProjectManagement.MigrationClassPrefix=com.as.migrations.ASProjectManagement
